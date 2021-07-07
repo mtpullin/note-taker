@@ -40,7 +40,16 @@ const saveNote = (note) =>
       'Content-Type': 'application/json',
     },
     body: JSON.stringify(note),
-  });
+  })
+  .then(response => {
+    if(response.ok) {
+      return response.json()
+    }
+    alert('Error: ' + response.statusText)
+  })
+  .then(postResponse => {
+    console.log(postResponse);
+  })
 
 const deleteNote = (id) =>
   fetch(`/api/notes/${id}`, {
@@ -129,6 +138,7 @@ const renderNoteList = async (notes) => {
   const createLi = (text, delBtn = true) => {
     const liEl = document.createElement('li');
     liEl.classList.add('list-group-item');
+    
 
     const spanEl = document.createElement('span');
     spanEl.classList.add('list-item-title');
