@@ -3,6 +3,9 @@ const express = require('express')
 const path = require('path')
 const PORT = process.env.PORT || 3001;
 const app = express();
+const apiRoutes = require('./routes/apiroutes')
+const htmlRoutes = require('./routes/htmlroutes')
+
 const {db} = require('./develop/db/db.json')
 app.use(express.static('public'));
 app.use(express.urlencoded({ extended: true }));
@@ -18,28 +21,6 @@ function createNote(body, noteArray) {
     return note;
 }
 
-app.get('/api/notes', (req, res)=> {
-    let results = db;
-    res.json(results)
-})
-app.post('/notes', (req, res)=> {
-    req.body.id = db.length.toString();
-    const note = createNote(req.body, notes);
-    res.json(note)
-})
-
-app.get('/', (req,res)=> {
-    res.sendFile(path.join(__dirname, './develop/public/index.html'))
-})
-
-app.get('/notes', (req,res)=> {
-    res.sendFile(path.join(__dirname, './develop/public/notes.html'))
-})
-
-app.get('*', (req, res)=> {
-    res.sendFile(path.join(__dirname, './develop/public/index.html'))
-})
-
 app.listen(PORT, () => {
-    console.log(`API server now on port ${PORT}`)
+    console.log(`API server not on port ${PORT}`)
 })
