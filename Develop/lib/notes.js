@@ -7,8 +7,9 @@ const path = require('path')
 
 
 function createNote(body, noteArray) {
-    const note = body;
-    noteArray.push(note);
+   
+    noteArray.push(body);
+
     fs.writeFileSync(
         path.join(__dirname, '../db/db.json'),
         JSON.stringify({notes: noteArray }, null, 2)
@@ -16,4 +17,4 @@ function createNote(body, noteArray) {
     return note;
 }
 
-module.exports = createNote
+module.exports = {createNote}
