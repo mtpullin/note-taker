@@ -1,23 +1,9 @@
 {
   "notes": [
     {
-      "notes": []
-    },
-    {
-      "test note": "this is a test",
-      "id": "8aae42df-ac0a-43c2-8aec-e44e6bf0721e"
-    },
-    {
-      "test note": "this is a test",
-      "id": "85c0e3bb-5645-4b29-ab21-3f8c4e0b4da4"
-    },
-    {
-      "test note": "this is a test",
-      "id": "68f60c43-0195-4ca5-b310-705a510452ea"
-    },
-    {
-      "test note": "this is a test",
-      "id": "c3acf97a-ace3-46d3-827f-67e15650ce6f"
+      "title": "Hello",
+      "text": "Hello",
+      "id": "0"
     }
   ]
 }

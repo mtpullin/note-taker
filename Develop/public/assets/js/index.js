@@ -44,12 +44,11 @@ const saveNote = (note) =>
   .then(response => {
     if(response.ok) {
       return response.json()
+    }else{
+    alert(`Error:  + ${response.statusText}`)
     }
-    alert('Error: ' + response.statusText)
   })
-  .then(postResponse => {
-    console.log(postResponse);
-  })
+  
 
 const deleteNote = (id) =>
   fetch(`/api/notes/${id}`, {
